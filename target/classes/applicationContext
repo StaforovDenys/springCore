@@ -7,47 +7,7 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="classpath:musicPlayer.properties"/>
-    <bean id="musicBean"
-          class="ua.staforov.springcourse.ClassicalMusic"
-          init-method="doMyInit"
-          destroy-method="doMyDestroy"
-          factory-method="getClassicalMusic">
-    </bean>
+    <context:component-scan base-package="ua.staforov.springcourse"/>
 
-    <!--    <bean id="musicPlayer"-->
-    <!--          class="ua.staforov.springcourse.MusicPlayer"-->
-    <!--           scope="prototype" >-->
-
-    <!--        <property name="music" ref="musicBean"/>-->
-
-    <!--        <property name="name" value="Some name"/>-->
-    <!--        <property name="volume" value="70"/>-->
-    <!--    </bean>-->
 </beans>
 
-
-        <!--read List<> -->
-
-        <!--    <bean id="musicPlayer"-->
-        <!--          class="ua.staforov.springcourse.MusicPlayer">-->
-        <!--        <property name="musicList">-->
-        <!--            <list>-->
-        <!--               <ref bean="musicBean"/>-->
-        <!--               <ref bean="musicBean1"/>-->
-        <!--               <ref bean="musicBean2"/>-->
-        <!--            </list>-->
-        <!--        </property>-->
-        <!--    </bean>-->
-
-
-        <!--      read from file-->
-
-
-        <!--<bean id="musicPlayer"-->
-        <!--      class="ru.alishev.springcourse.MusicPlayer">-->
-        <!--<property name="music" ref="musicBean"/>-->
-
-        <!--<property name="name" value="${musicPlayer.name}"/>-->
-        <!--<property name="volume" value="${musicPlayer.volume}"/>-->
-        <!--</bean>-->

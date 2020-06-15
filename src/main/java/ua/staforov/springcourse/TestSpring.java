@@ -5,31 +5,24 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestSpring {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-            "applicationContext"
+                "applicationContext"
         );
 
-        ClassicalMusic classicalMusic = context.getBean("musicBean",ClassicalMusic.class);
-        System.out.println(classicalMusic.getSong());
-
-//       Music music = context.getBean("musicBean",Music.class);
+//        Music music = context.getBean("rockMusic",Music.class);
 //
-//       MusicPlayer musicPlayer = new MusicPlayer(music);
-//        MusicPlayer firstMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-//        MusicPlayer secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+//        MusicPlayer musicPlayer = new MusicPlayer(music);
 //
-//        boolean comparison = firstMusicPlayer == secondMusicPlayer;
+//        musicPlayer.playMusic();
 //
-//        System.out.println(comparison);
-//        System.out.println(firstMusicPlayer);
-//        System.out.println(secondMusicPlayer);
+//        Music music1 = context.getBean("classicalMusic",Music.class);
 //
+//        MusicPlayer musicPlayer1 = new MusicPlayer(music1);
 //
-//        firstMusicPlayer.setVolume(10);
-//        System.out.println(firstMusicPlayer.getVolume());
-//        System.out.println(secondMusicPlayer.getVolume());
-//        System.out.println(musicPlayer.getName());
-//        System.out.println(musicPlayer.getVolume());
-
-       context.close();
+//        musicPlayer1.playMusic();
+//        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+//        musicPlayer.playMusic();
+        Computer computer = context.getBean("computer",Computer.class);
+        System.out.println(computer);
+        context.close();
     }
 }
