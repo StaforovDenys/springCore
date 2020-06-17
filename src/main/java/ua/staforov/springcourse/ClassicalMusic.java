@@ -1,26 +1,31 @@
 package ua.staforov.springcourse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 @Component
-public class ClassicalMusic implements Music {
-    private List<String> songs = new ArrayList<>();
+//@Scope("singleton")
+//@Scope("prototype")
 
-    // Блок инициализации объекта (англ. Instance initialization block)
-    // Выполняется каждый раз, когда создается объект класса
-    {
-        songs.add("Hungarian Rhapsody");
-        songs.add("Symphony no. 5 in C Minor, op. 67");
-        songs.add("Night on Bald Mountain");
-    }
+public class ClassicalMusic implements Music {
+    @PreDestroy
+    public void doMyInit(){
+        System.out.println("Doing my initialization");
+   }
+   @PreDestroy
+   public void doMyDestroy(){
+       System.out.println("Doing my destroying");
+   }
 
     @Override
-    public List<String> getSong() {
-        return songs;
+    public String getSong() {
+        return "Hungarian Rhapsody";
     }
 }
