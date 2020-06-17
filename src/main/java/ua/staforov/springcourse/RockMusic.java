@@ -3,7 +3,7 @@ package ua.staforov.springcourse;
 import org.springframework.stereotype.Component;
 
 
-@Component//("musicBean")
+//@Component//("musicBean")
 public class RockMusic implements Music {
 
     @Override
